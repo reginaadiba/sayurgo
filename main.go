@@ -14,6 +14,7 @@ func main() {
 	config.DB.AutoMigrate(&models.Product{})
 
 	r := gin.Default()
+	r.Static("/uploads", "./uploads")
 	routes.RegisterRoutes(r)
 
 	r.Run(":8090")
